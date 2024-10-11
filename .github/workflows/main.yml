@@ -39,17 +39,17 @@ jobs:
       - name: Create archive of dependencies
         run: |
           cd venv/lib/python3.12/site-packages
-zip -r9 ../../../../api.zip .
+          zip -r9 ../../../../api.zip .
  
       # Step-6: Add API files to the Zip file
       - name: Add API files to Zip file
         run: |
           cd ./api
-zip -g ../api.zip -r .
+          zip -g ../api.zip -r .
  
       # Step-7: Upload zip file artifact
       - name: Upload zip file artifact
         uses: actions/upload-artifact@v3
         with:
           name: api
-path: api.zip
+          path: api.zip
